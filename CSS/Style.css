@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
    font-family: 'Satoshi Regular';
    font-style: normal;
@@ -66,4 +67,105 @@
    font-style: normal;
    font-weight: normal;
    src: url('../Material/Fonts/Satoshi-BlackItalic.woff') format('woff');
+}
+@font-face {
+   font-family: 'Lufga SemiBold';
+   src: url('../Material/Fonts/LufgaSemiBold.ttf') format('ttf');
+}
+
+/* Reset and global styles */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   /* Color Variable */
+   --white: #FAFAFA;
+   --Black: #1c1c1c;
+
+   /* Font Variable */
+   --Font-Family: 'Satoshi Regular', Arial, sans-serif;
+}
+
+html{
+   scroll-behavior: smooth;
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+body {
+   font-family: var(--Font-Family);
+   overflow-x: hidden;
+}
+
+
+/* Nav bar */
+nav {
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 30px;
+   align-items: center;
+   background-color: var(--white);
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+   transition: backgroun   d-color 0.3s ease;
+}
+
+nav ul {
+   display: flex;
+   list-style: none;
+   gap: 2rem;
+}
+
+nav li {
+   font-size: 1.25rem;
+   font-family: 'Satoshi Medium';
+   text-decoration: none;
+   transition: transform 0.2s ease;
+}
+
+nav .logo a img {
+   width: 50px;
+   height: auto;
+}
+nav a img {
+   width: 20px;
+   height: auto;
+}
+
+nav a {
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   color: var(--Black);
+   transition: color 0.3s ease, border-bottom 0.3s ease;
+   position: relative;
+}
+
+nav a:hover {
+   color: var(--Black);
+   border-bottom: 3px solid var(--Black);
+}
+
+nav a::before {
+   content: "";
+   position: absolute;
+   bottom: -3px;
+   left: 0;
+   width: 100%;
+   height: 3px;
+   background-color: transparent;
+   transition: background-color 0.3s ease;
+}
+
+nav a:hover::before {
+   background-color: var(--Black);
+}
+
+nav ul li:hover {
+   transform: translateY(-2px);
 }
